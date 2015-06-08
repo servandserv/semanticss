@@ -1,1 +1,3 @@
 # semanticss
+
+Simple css framework

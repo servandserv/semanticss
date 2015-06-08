@@ -1,6 +1,8 @@
 dist="../dist"
 app="semanticss"
 
+mkdir -p ${dist} 
+
 # prepare css
 sass --trace sass/semanticss.scss ${dist}/css/${app}.css
 
@@ -8,4 +10,4 @@ cp index.xml ${dist}/index.xml
 cp -R stylesheets ${dist}/stylesheets
 cp -R font ${dist}/font
 
-chmod 777 ${dist}
+chmod -R 777 ${dist}
