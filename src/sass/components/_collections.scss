@@ -1,0 +1,95 @@
+// Collections
+.collection {
+    margin: $element-top-margin 0 $element-bottom-margin 0;
+    border: 1px solid $collection-border-color;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+
+    > * {
+        background-color: $collection-bg-color;
+        line-height: 1.5;
+        padding: 10px 20px;
+        margin: 0;
+        border-bottom: 1px solid $collection-border-color;
+
+        // Avatar Collection
+        &.avatar {
+            min-height: 84px;
+            padding-left: 72px;
+            position: relative;
+
+            > img:first-child {
+                position: absolute;
+                width: 42px;
+                height: 42px;
+                overflow: hidden;
+                left: 15px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            > i:first-child {
+                font-size: 18px;
+                line-height: 42px;
+                color: #fff;
+                background-color: #999;
+                text-align: center;
+            }
+
+            > span {
+                @include font-size($font-size-subhead-1);
+            }
+            > p {
+                margin: 0;
+            }
+            
+            > a:last-child {
+                position: absolute;
+                top: .75em;
+                right: 1em;
+                float: right;
+                color: $secondary-color;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &.active {
+            background-color: $collection-active-bg-color;
+            color: $collection-active-color;
+        }
+        > div > a {
+            float: right;
+            color: $secondary-color;
+            position: absolute;
+            top: .5em;
+            right: 1em;
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+    > a {
+        display: block;
+        @include transition(.25s);
+        color: $secondary-color;
+        &:not(.active) {
+            &:hover {
+                background-color: $collection-hover-bg-color;
+            }
+        }
+    }
+
+    &.with-header {
+        .collection-header {
+            background-color: $collection-bg-color;
+            border-bottom: 1px solid $collection-border-color;
+            padding: 10px 20px;
+        }
+        li, a {
+            padding-left: 30px;
+        }
+    }
+}

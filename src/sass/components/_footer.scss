@@ -1,0 +1,15 @@
+// Footer
+div.footer,
+footer {
+    padding-top: 2em;
+    background-color: $footer-bg-color;
+
+    /* copyright */
+    > div:last-child {
+        overflow: hidden;
+        height: 3em;
+        line-height: 3em;
+        background-color: $primary-color-dark;
+        @extend .light;
+    }
+}

@@ -1,0 +1,11 @@
+dist="../dist"
+app="semanticss"
+
+# prepare css
+sass --trace sass/semanticss.scss ${dist}/css/${app}.css
+
+cp index.xml ${dist}/index.xml
+cp -R stylesheets ${dist}/stylesheets
+cp -R font ${dist}/font
+
+chmod 777 ${dist}

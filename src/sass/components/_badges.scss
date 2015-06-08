@@ -1,0 +1,23 @@
+// Badges
+span.badge {
+    min-width: 3rem;
+    padding: 0 .5rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: inherit;
+    color: $text-color-dark;
+    position: absolute;
+    margin-right: 1rem;
+    @include box-sizing(border-box);
+
+    &.new {
+        font-weight: 300;
+        font-size: .8rem;
+        color: #fff;
+        background-color: $badge-bg-color;
+        border-radius: 2px;
+    }
+    &.new:after {
+        content: " new";
+    }
+}
