@@ -1,7 +1,7 @@
 dist="../dist"
 app="semanticss"
 
-mkdir -p ${dist} 
+mkdir -p ${dist}/css 
 
 # prepare css
 sass --trace sass/semanticss.scss ${dist}/css/${app}.css
