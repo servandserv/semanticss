@@ -1,13 +1,15 @@
-dist="../dist"
+src=$(dirname $(realpath $0))
+dist=$(realpath "${src}/../dist")
 app="semanticss"
 
-mkdir -p ${dist} 
+mkdir -p ${dist}
+mkdir -p ${dist}/css
 
 # prepare css
-sass --trace sass/semanticss.scss ${dist}/css/${app}.css
+/usr/local/bin/sass --trace ${src}/sass/semanticss.scss ${dist}/css/${app}.css
 
-cp index.xml ${dist}/index.xml
-cp -R stylesheets ${dist}/stylesheets
-cp -R font ${dist}/font
+cp ${src}/index.xml ${dist}/index.xml
+cp -R ${src}/stylesheets ${dist}/stylesheets
+cp -R ${src}/font ${dist}/font
 
 chmod -R 777 ${dist}
