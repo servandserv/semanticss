@@ -7,6 +7,10 @@ mkdir -p ${dist}/css
 
 # prepare css
 /usr/local/bin/sass --trace ${src}/sass/semanticss.scss ${dist}/css/${app}.css
+echo "${dist}/css/${app}.css created"
+
+java -jar ~/yuicompressor/yuicompressor-2.4.8.jar --type css -o ${dist}/css/${app}.min.css ${dist}/css/${app}.css
+echo "${dist}/css/${app}.css minified"
 
 cp ${src}/index.xml ${dist}/index.xml
 cp -R ${src}/stylesheets ${dist}/stylesheets
